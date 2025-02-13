@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>嘿呦</title>
+    <title>您好啊！张静雅</title>
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -24,14 +24,14 @@
             margin-bottom: 20px;
         }
 
-        .button-container {
+      .button-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
         }
 
-        .button {
+      .button {
             padding: 20px 30px;
             border: none;
             border-radius: 20px;
@@ -40,7 +40,7 @@
             transition: transform 0.3s ease;
         }
 
-        .button:hover {
+      .button:hover {
             transform: scale(1.1);
         }
 
@@ -74,7 +74,12 @@
             color: white;
         }
 
-        .content {
+        #gallery {
+            background-color: #00bfff;
+            color: white;
+        }
+
+      .content {
             display: none;
             background-color: white;
             border-radius: 20px;
@@ -82,6 +87,20 @@
             margin-top: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             text-align: center;
+        }
+
+      .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+      .image-container img {
+            max-width: 200px;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -94,7 +113,8 @@
         <button class="button" id="today-plan" onclick="showContent('today-plan-content')">今日计划</button>
         <button class="button" id="future-plan" onclick="showContent('future-plan-content')">未来规划</button>
         <button class="button" id="sweet-word" onclick="showContent('sweet-word-content')">甜蜜情话</button>
-        <button class="button" id="confession" onclick="showContent('confession-content')">深情表白</button>
+        <button class="button" id="confession" onclick="showContentAndPlayMusic('confession-content')">深情表白</button>
+        <button class="button" id="gallery" onclick="showContent('gallery-content')">我的图库</button>
     </div>
 
     <div id="mood-content" class="content">
@@ -115,6 +135,14 @@
     <div id="confession-content" class="content">
         <p>我喜欢你，不是一时兴起，而是蓄谋已久。我想一直牵着你的手，陪你走过岁岁年年</p>
     </div>
+    <div id="gallery-content" class="content">
+        <div class="image-container">
+            <img src="image1.jpg" alt="图片1">
+            <img src="image2.jpg" alt="图片2">
+        </div>
+    </div>
+
+    <audio id="music" src="zjy.ncm" preload="none"></audio>
 
     <script>
         function showContent(id) {
@@ -124,6 +152,12 @@
             });
             const targetContent = document.getElementById(id);
             targetContent.style.display = 'block';
+        }
+
+        function showContentAndPlayMusic(id) {
+            showContent(id);
+            const music = document.getElementById('music');
+            music.play();
         }
     </script>
 </body>
