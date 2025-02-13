@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>亲爱的，我爱你??</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(to bottom, #ffc0cb, #ffffff);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #ff1493;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .button {
+            padding: 20px 30px;
+            border: none;
+            border-radius: 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+
+        #mood {
+            background-color: #ff69b4;
+            color: white;
+        }
+
+        #weather {
+            background-color: #87ceeb;
+            color: white;
+        }
+
+        #today-plan {
+            background-color: #98fb98;
+            color: white;
+        }
+
+        #future-plan {
+            background-color: #dda0dd;
+            color: white;
+        }
+
+        #sweet-word {
+            background-color: #ffd700;
+            color: white;
+        }
+
+        #confession {
+            background-color: #ff4500;
+            color: white;
+        }
+
+        .content {
+            display: none;
+            background-color: white;
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>亲爱的宝贝，你是我永远的小仙女???♀?</h1>
+    <div class="button-container">
+        <button class="button" id="mood" onclick="showContent('mood-content')">今日心情</button>
+        <button class="button" id="weather" onclick="showContent('weather-content')">今日天气</button>
+        <button class="button" id="today-plan" onclick="showContent('today-plan-content')">今日计划</button>
+        <button class="button" id="future-plan" onclick="showContent('future-plan-content')">未来规划</button>
+        <button class="button" id="sweet-word" onclick="showContent('sweet-word-content')">甜蜜情话</button>
+        <button class="button" id="confession" onclick="showContent('confession-content')">深情表白</button>
+    </div>
+
+    <div id="mood-content" class="content">
+        <p>今天你肯定超级开心，因为有我一直陪着你??</p>
+    </div>
+    <div id="weather-content" class="content">
+        <p>今天阳光明媚，就像你灿烂的笑容??</p>
+    </div>
+    <div id="today-plan-content" class="content">
+        <p>一起去吃好吃的甜品，再去看一场浪漫的电影??</p>
+    </div>
+    <div id="future-plan-content" class="content">
+        <p>未来我要和你一起走遍世界的每一个角落，留下属于我们的回忆??</p>
+    </div>
+    <div id="sweet-word-content" class="content">
+        <p>你是我生命中的一束光，照亮了我整个世界??</p>
+    </div>
+    <div id="confession-content" class="content">
+        <p>我喜欢你，不是一时兴起，而是蓄谋已久。我想一直牵着你的手，陪你走过岁岁年年??</p>
+    </div>
+
+    <script>
+        function showContent(id) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.style.display = 'none';
+            });
+            const targetContent = document.getElementById(id);
+            targetContent.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
